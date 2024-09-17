@@ -1,60 +1,72 @@
-export default {
+import {defineField, defineType} from 'sanity'
+
+export default defineType({
   name: 'homebanner',
-  title: 'Home Page Video Banner',
+  title: 'Video Banner',
   type: 'document',
   fields: [
-    {
+    defineField({
       name: 'bannerVideo',
-      title: 'Banner Video',
+      title: 'Video Link',
       type: 'url',
-    },
-    {
+    }),
+    defineField({
       name: 'bannerLogo',
-      title: 'Banner Logo',
+      title: 'Logo',
       type: 'image',
-      options: {
-        hotspot: true,
-      },
-    },
-    {
-      name: 'title',
-      title: 'Banner Title',
-      type: 'string',
-    },
-    {
+    }),
+    defineField({
+        name: 'title',
+        title: 'Heading',
+        type: 'string',
+    }),
+    defineField({
       name: 'bannerContent',
-      title: 'Banner Content',
+      title: 'Content',
       type: 'text',
-    },
-    {
-      name: 'bannerButton',
-      title: 'Banner Button',
-      type: 'object',
-      fields: [
-        {
-          name: 'buttonText',
-          title: 'Button Text',
-          type: 'string',
-        },
-        {
-          name: 'buttonLink',
-          title: 'Button Link',
-          type: 'url',
-        },
-      ],
-    },
-    {
-      name: 'bannerText',
-      title: 'Banner Text',
-      type: 'string',
-    },
-    {
-      name: 'bannerImage',
-      title: 'Banner Image',
-      type: 'image',
-      options: {
-        hotspot: true,
+  }),
+  defineField({
+    name: 'bannerButton',
+    title: 'Banner Button',
+    type: 'object',
+    fields: [
+      {
+        name: 'buttonText',
+        title: 'Button Text',
+        type: 'string',
       },
-    },
+      {
+        name: 'buttonLink',
+        title: 'Button Link',
+        type: 'url',
+      },
+    ],
+  }),
+  defineField({
+    name: 'bannerText',
+    title: 'Typing Text',
+    type: 'string',
+  }),
+    defineField({
+      name: 'language',
+      type: 'string',
+      readOnly: true,
+    }),
   ],
-};
+  preview: {
+    select: {
+      title: 'title',
+      language: 'language',
+      media: 'image',
+    },
+    prepare(select) {
+      const {title, language, media} = select
+
+      return {
+        title,
+        subtitle: language,
+        media,
+      }
+    },
+  },
+})
