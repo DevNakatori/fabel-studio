@@ -1,0 +1,10 @@
+{
+    "i18n": {
+      "languages": [
+        { "id": "nl", "title": "Dutch", "isDefault": true  }
+        { "id": "en", "title": "English (US)"}
+      
+      ],
+      "base": "nl"
+    }
+  }
