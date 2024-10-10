@@ -10,11 +10,19 @@ export default defineType({
       title: 'Video Link',
       type: 'url',
     }),
-    defineField({
+    defineField({   
       name: 'bannerLogo',
-      title: 'Logo',
+      title: 'Banner Logo',
       type: 'image',
-    }),
+      fields: [
+        {
+          name: 'assets',
+          title: 'Image Asset',
+          type: 'reference',
+          to: [{ type: 'image' }],
+        },
+      ]
+  }),
     defineField({
         name: 'title',
         title: 'Heading',
@@ -57,7 +65,7 @@ export default defineType({
     select: {
       title: 'title',
       language: 'language',
-      media: 'image',
+      media: 'bannerLogo',
     },
     prepare(select) {
       const {title, language, media} = select

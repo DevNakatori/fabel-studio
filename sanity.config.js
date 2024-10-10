@@ -21,7 +21,7 @@ export default defineConfig({
      visionTool(),
      documentInternationalization({
       supportedLanguages: i18n.languages,
-      schemaTypes: ['homebanner'],
+      schemaTypes: ['homebanner','onzefriet','onzelocaties','hetmenu','onzeimpact'],
     }),
     internationalizedArray({
       languages: i18n.languages,
