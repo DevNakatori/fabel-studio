@@ -8,7 +8,18 @@ export default defineType({
     defineField({
       name: "logoImage",
       title: "Logo",
-      type: "image"
+      type: "image",
+      options: {
+        hotspot: true, // Enable hotspot for cropping focus
+      },
+      fields: [
+        defineField({
+          name: 'alt',
+          title: 'Alt Text',
+          type: 'string',
+          description: 'Alternative text for screen readers',
+        }),
+      ],
     }),
     defineField({
       name: 'transitionSection',
@@ -28,7 +39,18 @@ export default defineType({
         defineField({
           title: "Image",
           name: "image",
-          type: "image"
+          type: "image",
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            defineField({
+              name: 'alt',
+              title: 'Alt Text',
+              type: 'string',
+              description: 'Alternative text for screen readers',
+            }),
+          ],
         }),
       ],
     }),
@@ -59,6 +81,17 @@ export default defineType({
                     name: 'image',
                     title: 'Image',
                     type: 'image',
+                    options: {
+                      hotspot: true,
+                    },
+                    fields: [
+                      defineField({
+                        name: 'alt',
+                        title: 'Alt Text',
+                        type: 'string',
+                        description: 'Alternative text for screen readers',
+                      }),
+                    ],
                   }),
                   defineField({
                     name: 'leftText',
@@ -246,5 +279,3 @@ export default defineType({
     },
   },
 })
-
-

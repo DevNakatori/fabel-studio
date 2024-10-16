@@ -14,6 +14,9 @@ export default defineType({
       name: 'bannerLogo',
       title: 'Banner Logo',
       type: 'image',
+      options: {
+        hotspot: true, 
+      },
       fields: [
         {
           name: 'assets',
@@ -21,6 +24,13 @@ export default defineType({
           type: 'reference',
           to: [{ type: 'image' }],
         },
+        {
+          name: 'alt',
+          title: 'Alt Text',
+          type: 'string',
+          description: 'A short description of the image for accessibility and SEO',
+          validation: Rule => Rule.required().error('Alt text is required'),
+        }
       ]
   }),
     defineField({

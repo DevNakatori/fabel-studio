@@ -8,7 +8,18 @@ export default defineType({
     defineField({
       name: "logoImage",
       title: "Logo",
-      type: "image"
+      type: "image",
+      options: {
+        hotspot: true, // Enable hotspot for better cropping
+      },
+      fields: [
+        defineField({
+          name: 'alt',
+          title: 'Alt Text',
+          type: 'string',
+          description: 'Alternative text for screen readers',
+        }),
+      ],
     }),
     defineField({
       name: 'transitionSection',
@@ -28,7 +39,18 @@ export default defineType({
         defineField({
           title: "Image",
           name: "image",
-          type: "image"
+          type: "image",
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            defineField({
+              name: 'alt',
+              title: 'Alt Text',
+              type: 'string',
+              description: 'Alternative text for screen readers',
+            }),
+          ],
         }),
       ],
     }),
@@ -48,11 +70,24 @@ export default defineType({
           type: 'text',
         }),
         defineField({
-            title: "3 Image",
-            name: "three_image",
-            type: 'array',
-            of: [{ type: 'image' }],
-            validation: (Rule) => Rule.min(1).max(3).error('You can add between 1 and 3 images only.'),
+          title: "3 Images",
+          name: "three_image",
+          type: 'array',
+          of: [{ 
+            type: 'image',
+            options: {
+              hotspot: true,
+            },
+            fields: [
+              defineField({
+                name: 'alt',
+                title: 'Alt Text',
+                type: 'string',
+                description: 'Alternative text for screen readers',
+              }),
+            ],
+          }],
+          validation: (Rule) => Rule.min(1).max(3).error('You can add between 1 and 3 images only.'),
         }),
       ],
     }),
@@ -74,12 +109,13 @@ export default defineType({
         defineField({   
           name: 'videoLink',
           title: 'Video Link',
-          type: 'string',
+          type: 'url',
+          description: 'Link to the video',
         }),
         defineField({   
-            name: 'videoHandwritingText',
-            title: 'Handwriting Text',
-            type: 'string',
+          name: 'videoHandwritingText',
+          title: 'Handwriting Text',
+          type: 'string',
         }),
       ],
     }),
@@ -115,6 +151,7 @@ export default defineType({
                   name: 'reviewRating',
                   title: 'Rating',
                   type: 'number',
+                  validation: (Rule) => Rule.min(1).max(5).error('Rating must be between 1 and 5'),
                 }),
               ],
             },

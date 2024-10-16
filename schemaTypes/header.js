@@ -26,7 +26,7 @@ export default defineType({
                 defineField({
                     name: 'link',
                     title: 'Link',
-                    type: 'url',
+                    type: 'text',
                 }),
               ],
             },
