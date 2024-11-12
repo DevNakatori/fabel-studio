@@ -1,4 +1,4 @@
-import {defineField, defineType, isImage} from 'sanity'
+import {defineField, defineType, isImage, defineArrayMember} from 'sanity'
 
 export default defineType({
   name: 'hetmenu',
@@ -6,9 +6,9 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: "logoImage",
-      title: "Logo",
-      type: "image",
+      name: 'logoImage',
+      title: 'Logo',
+      type: 'image',
       options: {
         hotspot: true, // Enable hotspot for better cropping
       },
@@ -31,15 +31,15 @@ export default defineType({
           title: 'Top Title',
           type: 'string',
         }),
-        defineField({   
+        defineField({
           name: 'bottomTitle',
           title: 'Bottom Title',
           type: 'string',
         }),
         defineField({
-          title: "Image",
-          name: "image",
-          type: "image",
+          title: 'Image',
+          name: 'image',
+          type: 'image',
           options: {
             hotspot: true,
           },
@@ -64,7 +64,7 @@ export default defineType({
           title: 'Heading',
           type: 'string',
         }),
-        defineField({   
+        defineField({
           name: 'description',
           title: 'Description',
           type: 'text',
@@ -77,77 +77,204 @@ export default defineType({
       type: 'object',
       fields: [
         defineField({
-          name: 'Menu',
-          title: 'Menu Image',
+          name: 'friet',
+          title: 'Fries',
           type: 'array',
           of: [
-            {
+            defineArrayMember({
               type: 'object',
               fields: [
                 defineField({
-                  name: 'image',
-                  title: 'Image',
-                  type: 'image',
-                  options: {
-                    hotspot: true,
-                  },
-                  fields: [
-                    defineField({
-                      name: 'alt',
-                      title: 'Alt Text',
-                      type: 'string',
-                      description: 'Alternative text for screen readers',
+                  name: 'title',
+                  title: 'Title',
+                  type: 'string',
+                }),
+                defineField({
+                  name: 'menu',
+                  title: 'Menus (Recipe)',
+                  description: 'Food Menus',
+                  type: 'array',
+                  of: [
+                    defineArrayMember({
+                      type: 'object',
+                      fields: [
+                        defineField({
+                          name: 'recipe',
+                          title: 'Recipe',
+                          type: 'text',
+                        }),
+                        defineField({
+                          name: 'recipedetails',
+                          title: 'Recipe Details',
+                          type: 'text',
+                        }),
+                        defineField({
+                          name: 'price',
+                          title: 'Price',
+                          type: 'text',
+                        }),
+                      ],
                     }),
                   ],
                 }),
               ],
-            },
+            }),
+          ],
+        }),
+        defineField({
+          name: 'snacks',
+          title: 'Snacks',
+          type: 'array',
+          of: [
+            defineArrayMember({
+              type: 'object',
+              fields: [
+                defineField({
+                  name: 'title',
+                  title: 'Title',
+                  type: 'string',
+                }),
+                defineField({
+                  name: 'subTitle',
+                  title: 'Sub Title',
+                  type: 'string',
+                }),
+                defineField({
+                  name: 'filtername',
+                  title: 'Filte rname',
+                  type: 'string',
+                }),
+                defineField({
+                  name: 'menu',
+                  title: 'Menus (Recipe)',
+                  description: 'Food Menus',
+                  type: 'array',
+                  of: [
+                    defineArrayMember({
+                      type: 'object',
+                      fields: [
+                        defineField({
+                          name: 'recipe',
+                          title: 'Recipe',
+                          type: 'text',
+                        }),
+                        defineField({
+                          name: 'recipedetails',
+                          title: 'Recipe Details',
+                          type: 'text',
+                        }),
+                        defineField({
+                          name: 'price',
+                          title: 'Price',
+                          type: 'text',
+                        }),
+                      ],
+                    }),
+                  ],
+                }),
+              ],
+            }),
+          ],
+        }),
+        defineField({
+          name: 'drinks',
+          title: 'Drinks',
+          type: 'array',
+          of: [
+            defineArrayMember({
+              type: 'object',
+              fields: [
+                defineField({
+                  name: 'title',
+                  title: 'Title',
+                  type: 'string',
+                }),
+                defineField({
+                  name: 'subTitle',
+                  title: 'Sub Title',
+                  type: 'string',
+                }),
+                defineField({
+                  name: 'filtername',
+                  title: 'Filte rname',
+                  type: 'string',
+                }),
+                defineField({
+                  name: 'menu',
+                  title: 'Menus (Recipe)',
+                  description: 'Food Menus',
+                  type: 'array',
+                  of: [
+                    defineArrayMember({
+                      type: 'object',
+                      fields: [
+                        defineField({
+                          name: 'recipe',
+                          title: 'Recipe',
+                          type: 'text',
+                        }),
+                        defineField({
+                          name: 'recipedetails',
+                          title: 'Recipe Details',
+                          type: 'text',
+                        }),
+                        defineField({
+                          name: 'price',
+                          title: 'Price',
+                          type: 'text',
+                        }),
+                      ],
+                    }),
+                  ],
+                }),
+              ],
+            }),
           ],
         }),
       ],
     }),
     defineField({
-        name: 'bottomContentSection',
-        title: 'Bottom Content Section',
-        type: 'object',
-        fields: [
-          defineField({
-            name: 'bottomHeading',
-            title: 'Bottom Heading',
-            type: 'string',
-          }),
-          defineField({   
-            name: 'bottomDescription',
-            title: 'Bottom Description',
-            type: 'text',
-          }),
-          defineField({   
-            name: 'bottomImage',
-            title: 'Bottom Image',
-            type: 'image',
-            options: {
-              hotspot: true,
-            },
-            fields: [
-              defineField({
-                name: 'alt',
-                title: 'Alt Text',
-                type: 'string',
-                description: 'Alternative text for screen readers',
-              }),
-            ],
-          }),
-          defineField({   
-            name: 'bottomTitle',
-            title: 'Bottom Title',
-            type: 'string',
-          }),
-          defineField({   
-            name: 'bottomContent',
-            title: 'Bottom Content',
-            type: 'text',
-          }),
-        ],
+      name: 'bottomContentSection',
+      title: 'Bottom Content Section',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'bottomHeading',
+          title: 'Bottom Heading',
+          type: 'string',
+        }),
+        defineField({
+          name: 'bottomDescription',
+          title: 'Bottom Description',
+          type: 'text',
+        }),
+        defineField({
+          name: 'bottomImage',
+          title: 'Bottom Image',
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            defineField({
+              name: 'alt',
+              title: 'Alt Text',
+              type: 'string',
+              description: 'Alternative text for screen readers',
+            }),
+          ],
+        }),
+        defineField({
+          name: 'bottomTitle',
+          title: 'Bottom Title',
+          type: 'string',
+        }),
+        defineField({
+          name: 'bottomContent',
+          title: 'Bottom Content',
+          type: 'text',
+        }),
+      ],
     }),
     defineField({
       name: 'language',
@@ -163,7 +290,7 @@ export default defineType({
       media: 'logoImage',
     },
     prepare(selection) {
-      const { topTitle, bottomTitle, language, media } = selection;
+      const {topTitle, bottomTitle, language, media} = selection
 
       return {
         title: `${topTitle || ''} ${bottomTitle || ''}`.trim(),
