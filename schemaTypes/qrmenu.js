@@ -46,7 +46,7 @@ export default defineType({
       fields: [
         defineField({
           name: 'friet',
-          title: 'Friet',
+          title: 'Fries',
           type: 'array',
           of: [
             defineArrayMember({
@@ -60,6 +60,121 @@ export default defineType({
                 defineField({
                   name: 'subTitle',
                   title: 'Sub Title',
+                  type: 'string',
+                }),
+				defineField({
+                  name: 'filtername',
+                  title: 'Filte rname',
+                  type: 'string',
+                }),
+                defineField({
+                  name: 'menu',
+                  title: 'Menus (Recipe)',
+                  description: 'Food Menus',
+                  type: 'array',
+                  of: [
+                    defineArrayMember({
+                      type: 'object',
+                      fields: [
+                        defineField({
+                          name: 'recipe',
+                          title: 'Recipe',
+                          type: 'string',
+                        }),
+                        defineField({
+                          name: 'recipedetails',
+                          title: 'Recipe Details',
+                          type: 'string',
+                        }),
+                        defineField({
+                          name: 'price',
+                          title: 'Price',
+                          type: 'string',
+                        }),
+                      ],
+                    }),
+                  ],
+                }),
+              ],
+            }),
+          ],
+        }),
+		defineField({
+          name: 'snacks',
+          title: 'Snacks',
+          type: 'array',
+          of: [
+            defineArrayMember({
+              type: 'object',
+              fields: [
+                defineField({
+                  name: 'title',
+                  title: 'Title',
+                  type: 'string',
+                }),
+                defineField({
+                  name: 'subTitle',
+                  title: 'Sub Title',
+                  type: 'string',
+                }),
+				defineField({
+                  name: 'filtername',
+                  title: 'Filte rname',
+                  type: 'string',
+                }),
+                defineField({
+                  name: 'menu',
+                  title: 'Menus (Recipe)',
+                  description: 'Food Menus',
+                  type: 'array',
+                  of: [
+                    defineArrayMember({
+                      type: 'object',
+                      fields: [
+                        defineField({
+                          name: 'recipe',
+                          title: 'Recipe',
+                          type: 'string',
+                        }),
+                        defineField({
+                          name: 'recipedetails',
+                          title: 'Recipe Details',
+                          type: 'string',
+                        }),
+                        defineField({
+                          name: 'price',
+                          title: 'Price',
+                          type: 'string',
+                        }),
+                      ],
+                    }),
+                  ],
+                }),
+              ],
+            }),
+          ],
+        }),
+		defineField({
+          name: 'drinks',
+          title: 'Drinks',
+          type: 'array',
+          of: [
+            defineArrayMember({
+              type: 'object',
+              fields: [
+                defineField({
+                  name: 'title',
+                  title: 'Title',
+                  type: 'string',
+                }),
+                defineField({
+                  name: 'subTitle',
+                  title: 'Sub Title',
+                  type: 'string',
+                }),
+				defineField({
+                  name: 'filtername',
+                  title: 'Filte rname',
                   type: 'string',
                 }),
                 defineField({
@@ -95,6 +210,7 @@ export default defineType({
           ],
         }),
       ],
+	 
     }),
     defineField({
       name: 'language',
