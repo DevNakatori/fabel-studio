@@ -7,5 +7,6 @@ import onzefriet from './onzefriet';
 import onzeimpact from './onzeimpact';
 import onzelocaties from './onzelocaties';
 import qrmenu from './qrmenu';
+import franchise from './franchise';
 
-export const schemaTypes = [header, homebanner, onzefriet, onzelocaties, hetmenu, onzeimpact, getintouch, footer, qrmenu]
+export const schemaTypes = [header, homebanner, onzefriet, onzelocaties, hetmenu, onzeimpact, getintouch, footer, qrmenu, franchise]
