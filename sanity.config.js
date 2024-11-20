@@ -1,6 +1,7 @@
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
+import { assist } from '@sanity/assist'
 import {schemaTypes} from './schemaTypes'
 import {i18n} from './languages'
 import {documentInternationalization} from '@sanity/document-internationalization'
@@ -17,7 +18,14 @@ export default defineConfig({
   projectId: '6tlmpa5b',
   dataset: 'production',
 
-  plugins: [structureTool(),
+  plugins: [structureTool(), assist( {
+    translate: {
+      document: {
+          languageField: 'language',
+          documentTypes: ['header', 'homebanner','onzefriet','onzelocaties','hetmenu','onzeimpact','getintouch','footer','qrmenu','franchise'],	
+      }
+    }
+  }),
      visionTool(),
      documentInternationalization({
       supportedLanguages: i18n.languages,
