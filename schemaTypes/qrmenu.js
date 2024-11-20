@@ -1,4 +1,3 @@
-
 import {DocumentIcon} from '@sanity/icons'
 import {defineArrayMember, defineField} from 'sanity'
 import {defineType, isImage} from 'sanity'
@@ -8,6 +7,21 @@ export default defineType({
   title: 'QR Menu',
   type: 'document',
   fields: [
+    defineField({
+      name: 'qrcustomertitle',
+      title: 'Customers Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'qrcustomerdescription',
+      title: 'Customers Description',
+      type: 'text',
+    }),
+    defineField({
+      name: 'qrcustomerTitle',
+      title: 'Customers Button Title',
+      type: 'string',
+    }),
     defineField({
       name: 'title',
       type: 'string',
@@ -19,7 +33,7 @@ export default defineType({
     }),
     defineField({
       name: 'tabs',
-      title:"Tabs",
+      title: 'Tabs',
       type: 'array',
       of: [
         defineArrayMember({
@@ -62,7 +76,7 @@ export default defineType({
                   title: 'Sub Title',
                   type: 'string',
                 }),
-				defineField({
+                defineField({
                   name: 'filtername',
                   title: 'Filte rname',
                   type: 'string',
@@ -99,7 +113,7 @@ export default defineType({
             }),
           ],
         }),
-		defineField({
+        defineField({
           name: 'snacks',
           title: 'Snacks',
           type: 'array',
@@ -117,7 +131,7 @@ export default defineType({
                   title: 'Sub Title',
                   type: 'string',
                 }),
-				defineField({
+                defineField({
                   name: 'filtername',
                   title: 'Filte rname',
                   type: 'string',
@@ -154,7 +168,7 @@ export default defineType({
             }),
           ],
         }),
-		defineField({
+        defineField({
           name: 'drinks',
           title: 'Drinks',
           type: 'array',
@@ -172,7 +186,7 @@ export default defineType({
                   title: 'Sub Title',
                   type: 'string',
                 }),
-				defineField({
+                defineField({
                   name: 'filtername',
                   title: 'Filte rname',
                   type: 'string',
@@ -210,7 +224,6 @@ export default defineType({
           ],
         }),
       ],
-	 
     }),
     defineField({
       name: 'language',
