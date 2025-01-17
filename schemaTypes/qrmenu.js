@@ -45,6 +45,12 @@ export default defineType({
               description: 'Tab Lable',
               type: 'string',
             }),
+            defineField({
+              name: 'english_lable',
+              title: 'English Lable',
+              description: 'English Tab Lable',
+              type: 'string',
+            }),
           ],
         }),
       ],
@@ -96,8 +102,18 @@ export default defineType({
                           type: 'string',
                         }),
                         defineField({
+                          name: 'english_recipe',
+                          title: 'English Recipe',
+                          type: 'string',
+                        }),
+                        defineField({
                           name: 'recipedetails',
                           title: 'Recipe Details',
+                          type: 'string',
+                        }),
+                        defineField({
+                          name: 'english_recipedetails',
+                          title: 'English Recipe Details',
                           type: 'string',
                         }),
                         defineField({
@@ -151,8 +167,18 @@ export default defineType({
                           type: 'string',
                         }),
                         defineField({
+                          name: 'english_recipe',
+                          title: 'English Recipe',
+                          type: 'string',
+                        }),
+                        defineField({
                           name: 'recipedetails',
                           title: 'Recipe Details',
+                          type: 'string',
+                        }),
+                        defineField({
+                          name: 'english_recipedetails',
+                          title: 'English Recipe Details',
                           type: 'string',
                         }),
                         defineField({
@@ -206,8 +232,18 @@ export default defineType({
                           type: 'string',
                         }),
                         defineField({
+                          name: 'english_recipe',
+                          title: 'English Recipe',
+                          type: 'string',
+                        }),
+                        defineField({
                           name: 'recipedetails',
                           title: 'Recipe Details',
+                          type: 'string',
+                        }),
+                        defineField({
+                          name: 'english_recipedetails',
+                          title: 'English Recipe Details',
                           type: 'string',
                         }),
                         defineField({
