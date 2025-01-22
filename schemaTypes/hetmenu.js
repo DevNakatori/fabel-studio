@@ -90,6 +90,16 @@ export default defineType({
                   type: 'string',
                 }),
                 defineField({
+                  name: 'subTitle',
+                  title: 'Sub Title',
+                  type: 'string',
+                }),
+                defineField({
+                  name: 'filtername',
+                  title: 'Filte rname',
+                  type: 'string',
+                }),
+                defineField({
                   name: 'menu',
                   title: 'Menus (Recipe)',
                   description: 'Food Menus',
